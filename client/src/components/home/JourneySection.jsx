@@ -10,10 +10,10 @@ import { useScrollReveal } from '../../hooks/useScrollReveal';
 const JOURNEY = [
   {
     icon: GraduationCap,
-    date: '2021',
+    date: '2022',
     title: 'Started B.Tech in Electronics & Telecom',
     description:
-      'Began my engineering degree and discovered a deep interest in software. Took my first steps into HTML, CSS, and basic programming — and never looked back.',
+      ' Enrolled in Electronics & Telecom Engineering at Bharati Vidyapeeth, University of Mumbai — but my real passion was always software. I had been building things with code long before college, and used every opportunity to pursue web development alongside my degree.',
   },
   {
     icon: Code2,

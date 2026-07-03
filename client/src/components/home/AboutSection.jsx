@@ -59,7 +59,8 @@ const AboutSection = () => {
           <div className="bg-bg-card border border-white/10 rounded-2xl p-6 space-y-5">
             <div>
               <p className="text-white/40 text-xs uppercase tracking-wider mb-1">Education</p>
-              <p className="text-white font-medium">B.Tech — Electronics & Telecom</p>
+              <p className="text-white font-medium">B.Tech — Electronics & Telecom (Bharati Vidyapeeth, Mumbai)
+Passion: Full Stack Development & AI</p>
             </div>
             <div>
               <p className="text-white/40 text-xs uppercase tracking-wider mb-1">Specialisation</p>

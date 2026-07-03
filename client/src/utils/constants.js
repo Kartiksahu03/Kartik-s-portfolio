@@ -12,6 +12,7 @@ export const SOCIAL_LINKS = {
   instagram: 'https://instagram.com/your-handle',   // TODO: update
   youtube: 'https://youtube.com/@your-channel',      // TODO: update
   email: 'kartiksahu3114@gmail.com',
+  portfolio: 'https://kartik-s-portfolio-tau.vercel.app',
 };
 
 export const PROJECT_CATEGORIES = [
