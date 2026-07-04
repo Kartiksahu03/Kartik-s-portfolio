@@ -64,7 +64,7 @@ const Resume = () => {
           </div>
 
           {/* Setup notice */}
-          <div className="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-4 max-w-xl mx-auto mb-8 flex items-start gap-3 text-left">
+          {/* <div className="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-4 max-w-xl mx-auto mb-8 flex items-start gap-3 text-left">
             <AlertCircle size={18} className="text-amber-400 flex-shrink-0 mt-0.5" />
             <div>
               <p className="text-amber-300 text-sm font-medium">To enable resume download:</p>
@@ -74,7 +74,7 @@ const Resume = () => {
                 {' '}and it will appear here automatically.
               </p>
             </div>
-          </div>
+          </div> */}
 
           {/* Quick skills summary */}
           <div className="bg-bg-card border border-white/10 rounded-2xl p-6 text-left max-w-2xl mx-auto">
