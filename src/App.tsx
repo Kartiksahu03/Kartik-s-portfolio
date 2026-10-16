@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 
 type WindowKey = "about" | "projects" | "resume" | "chat" | "stack";
-const API_BASE = (import.meta.env.VITE_API_BASE_URL || "").replace(/\\/$/, "");
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || "").replace(/\/+$/, "");
 type ChatMessage = { role: "user" | "assistant"; content: string };
 type Project = { name: string; eyebrow: string; description: string; stack: string[]; href: string; accent: string };
 
