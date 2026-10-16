@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 
 type WindowKey = "about" | "projects" | "resume" | "chat" | "stack";
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || "").replace(/\\/$/, "");
 type ChatMessage = { role: "user" | "assistant"; content: string };
 type Project = { name: string; eyebrow: string; description: string; stack: string[]; href: string; accent: string };
 
@@ -89,7 +90,7 @@ export default function App() {
   const [apiStatus, setApiStatus] = useState<"checking" | "online" | "offline">("checking");
   const chatEndRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    fetch("/api/health").then(r => r.ok ? r.json() : Promise.reject()).then(() => setApiStatus("online")).catch(() => setApiStatus("offline"));
+    fetch(`${API_BASE}/api/health`).then(r => r.ok ? r.json() : Promise.reject()).then(() => setApiStatus("online")).catch(() => setApiStatus("offline"));
   }, []);
   useEffect(() => { chatEndRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages, chatLoading]);
 
@@ -110,7 +111,7 @@ export default function App() {
     setChatInput("");
     setChatLoading(true);
     try {
-      const response = await fetch("/api/chat", {
+      const response = await fetch(`${API_BASE}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message, history: nextMessages.slice(-9, -1) })
