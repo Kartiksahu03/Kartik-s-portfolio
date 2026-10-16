@@ -1,10 +1,10 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  Bot, BriefcaseBusiness, Code2, Download, ExternalLink, FileText,
+  Bot, BriefcaseBusiness, Code2, ExternalLink, FileText,
   Github, GraduationCap, Linkedin, MessageCircle, Minus, Monitor,
   MoveUpRight, Send, Sparkles, Terminal, X, FolderGit2, Cpu,
-  ChevronRight, Command, Mail, PanelTop, RefreshCw
+  ChevronRight, Command, PanelTop
 } from "lucide-react";
 
 type WindowKey = "about" | "projects" | "resume" | "chat" | "stack";
@@ -88,10 +88,6 @@ export default function App() {
   const [chatLoading, setChatLoading] = useState(false);
   const [apiStatus, setApiStatus] = useState<"checking" | "online" | "offline">("checking");
   const chatEndRef = useRef<HTMLDivElement>(null);
-  const activeTitle = useMemo(() => activeWindow ? ({
-    about: "About Me", projects: "Projects", resume: "Resume", chat: "HireMe AI", stack: "Tech Stack"
-  }[activeWindow]) : "Desktop", [activeWindow]);
-
   useEffect(() => {
     fetch("/api/health").then(r => r.ok ? r.json() : Promise.reject()).then(() => setApiStatus("online")).catch(() => setApiStatus("offline"));
   }, []);
@@ -175,7 +171,7 @@ export default function App() {
         <div className="resume-section"><h3><BriefcaseBusiness size={15} /> Experience</h3><div className="timeline-item"><div className="timeline-dot" /><div><strong>Full Stack Web Developer (Freelance)</strong><span>Self-employed · Mar 2024 — Oct 2025</span><p>Delivered two client web applications end-to-end, from requirements and MERN development to deployment and post-launch support.</p></div></div></div>
         <div className="resume-section"><h3><FolderGit2 size={15} /> Selected projects</h3>{projects.slice(0,2).map(p => <div className="resume-project" key={p.name}><strong>{p.name}</strong><p>{p.description}</p></div>)}</div>
         <div className="resume-section"><h3><GraduationCap size={15} /> Education</h3><div className="timeline-item"><div className="timeline-dot" /><div><strong>B.E. — Electronics & Telecommunication Engineering</strong><span>Bharati Vidyapeeth College of Engineering · 2022–2026</span><p>University of Mumbai · Ranked 2nd out of 60+ students.</p></div></div></div>
-        <div className="resume-download"><div><FileText size={18} /><span><strong>Full resume PDF</strong><small>Use the source repository’s private local PDF path when running locally.</small></span></div><button className="secondary-button" onClick={() => openWindow("chat")}>Ask about my experience <ChevronRight size={14} /></button></div>
+        <div className="resume-download"><div><FileText size={18} /><span><strong>Resume highlights</strong><small>Professional summary based on the supplied resume.</small></span></div><button className="secondary-button" onClick={() => openWindow("chat")}>Ask about my experience <ChevronRight size={14} /></button></div>
       </WindowShell>
     );
     if (key === "stack") return (
