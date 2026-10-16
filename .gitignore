@@ -1,5 +1,8 @@
 node_modules/
-.env
 dist/
+.env
+.env.*
+!.env.example
+resume.pdf
 *.log
 .DS_Store
